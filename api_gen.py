@@ -84,8 +84,7 @@ def check_banner_status(image_uid):
         data = response.json()
         
         if response.status_code == 200:
-            if "status" in data and data["status"] == "completed":
-                print("Banner URL:", data["image_url"])
+            if "status" in data and data["status"] == "completed":                
                 return data["image_url"]
             elif "status" in data and data["status"] == "pending":
                 print("Rendering in progress, rechecking in 5 seconds...")
